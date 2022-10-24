@@ -8,4 +8,10 @@ class Rock(RSPLS_Selection):
         pass
 
     def attack(self, opponent):
-        pass
+        if opponent.name == 'Paper' or opponent.name == 'Spock':
+            opponent.health_points -= self.attack_power * .5
+
+        elif opponent.name == 'Lizard' or opponent.name == 'Scissors':
+            opponent.health_points -= self.attack_power * 2
+        else:
+            print(f'You both selected the same option! Please choose again.')
