@@ -6,5 +6,5 @@ class RSPLS_Selection:
         self.attack_power = attack_power
         pass
 
-    def attack(self, player, computer):
+    def attack(self, opponent):
         pass

@@ -6,3 +6,6 @@ class Rock(RSPLS_Selection):
     def __init__(self):
         super().__init__('Rock', 1)
         pass
+
+    def attack(self, opponent):
+        pass
