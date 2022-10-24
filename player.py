@@ -1,3 +1,6 @@
+# Parent Class
+
+from ai import AI
 from human import Human
 
 class Player:
