@@ -1,6 +1,6 @@
-
+from rock import Rock
 
 class Players:
     def __init__(self, name):
         self.name = name
-        self.rspls_list = []
+        self.rspls_list = [Rock()]

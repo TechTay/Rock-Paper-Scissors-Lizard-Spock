@@ -1,8 +1,10 @@
+
+
 from rspls_selection import RSPLS_Selection
 
-# strong against Lizard and scissors, weak against paper and Spock
+# strong against Rock and Spock, weak against Scissors and Lizard
 
 class Rock(RSPLS_Selection):
     def __init__(self):
-        super().__init__('Rock', 1)
+        super().__init__('Paper', 1)
         pass
