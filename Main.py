@@ -1,5 +1,5 @@
-from battleground import Battleground
-from players import Players
+from game import Game
 
-Battleground_one = Battleground()
-Battleground_one.run_game()
+if __name__ == '__main__':
+    game = Game()
+    game.run_game()

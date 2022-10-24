@@ -1,6 +1,6 @@
-from rock import Rock
+from Human import Human
 
-class Players:
+class Player:
     def __init__(self, name):
         self.name = name
-        self.rspls_list = [Rock(), ]
+        self.rspls_list = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
