@@ -1,4 +1,4 @@
-from Human import Human
+from human import Human
 
 class Player:
     def __init__(self, name):
