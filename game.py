@@ -51,24 +51,30 @@ class Game:
                 print('Invalid selection, please choose option "1" or "2".''\n')
                 return self.number_of_players()
                 
-    def name_to_number(self, name):
+    def name_to_number(name):
         bool2 = input(f'Choose 0 for Rock''\n''Choose 1 for Spock''\n''Choose 2 for Paper''\n''Choose 3 for Lizard''\n''Choose 4 for Scissors''\n' )
         while bool2:
 
-            if(name == 'Rock'):
-                return 0;
-            elif(name == 'Spock'):
-                return 1;
-            elif(name == 'Paper'):
-                return 2;
-            elif(name == 'Lizard'):
-                return 3;
-            elif(name == 'Scissors'):
-                return 4;
+            if(bool2 == '0'):
+                print('Player One Chose Rock.')
+                break
+            elif(bool2 == '1'):
+                print('Player One Chose Spock.')
+                break
+            elif(bool2 == '2'):
+                print('Player One Chose Paper')
+                break
+            elif(bool2 == '3'):
+                print('Player One Chose Lizard')
+                break
+            elif(bool2 == '4'):
+                print('Player One Chose Scissors')
+                break
             else:
                 print("Invalid input. Please try again.")
                 return name.name_to_number()
 
     def rpsls(player_choice):
         print("\n")
-        print('Player chooses' +)
+        print()
+        pass
