@@ -1,6 +1,7 @@
+from unicodedata import name
 from player import Player
-
-
+from human import Human
+from ai import AI
 
 
 class Game:
@@ -47,6 +48,27 @@ class Game:
                 print('Great! You chose multiplayer mode.''\n')
                 break
             else:
-                print('Invalid selection, please try again''\n')
+                print('Invalid selection, please choose option "1" or "2".''\n')
                 return self.number_of_players()
                 
+    def name_to_number(self, name):
+        bool2 = input(f'Choose 0 for Rock''\n''Choose 1 for Spock''\n''Choose 2 for Paper''\n''Choose 3 for Lizard''\n''Choose 4 for Scissors''\n' )
+        while bool2:
+
+            if(name == 'Rock'):
+                return 0;
+            elif(name == 'Spock'):
+                return 1;
+            elif(name == 'Paper'):
+                return 2;
+            elif(name == 'Lizard'):
+                return 3;
+            elif(name == 'Scissors'):
+                return 4;
+            else:
+                print("Invalid input. Please try again.")
+                return name.name_to_number()
+
+    def rpsls(player_choice):
+        print("\n")
+        print('Player chooses' +)
