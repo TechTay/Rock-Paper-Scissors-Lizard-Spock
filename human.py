@@ -10,8 +10,9 @@ class Human(Player):
         self.score = 0
 
     def player_gesture_choice(self):
-        self.player_choice =()
         rpsls_list = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
+        user_input_number = int(input('Please enter a number'))
+        self.choosen_gesture = rpsls_list[user_input_number]
         sleep(1)
-        print(f'{self.name} has picked {rpsls_list[int(self.player_choice)]}')
+        print(self.choosen_gesture)
         

@@ -21,7 +21,7 @@ class Game:
         self.game_info()
         self.number_of_players()
         self.name_to_number()
-        self.
+        self
 
 
     def welcome(self):
@@ -58,7 +58,7 @@ class Game:
         while bool2:
 
             if(bool2 == '0'):
-                print('Player One Chose Rock.')
+                print(' Chose Rock.')
                 break
             elif(bool2 == '1'):
                 print('Player One Chose Spock.')
@@ -76,7 +76,9 @@ class Game:
                 print("Invalid input. Please try again.")
                 return name.name_to_number()
 
-    def rpsls(player_choice):
+    def rpsls(self, player_choice):
+        
+        
         print("\n")
-        print()
+        
         pass
