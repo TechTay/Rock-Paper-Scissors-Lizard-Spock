@@ -6,22 +6,18 @@ from ai import AI
 
 class Game:
     def __init__(self):
-        pass
+        self.player_one = Human('Player One')
+        self.Player_two = self.create_game()
+        
+
+    def create_game(self):
+        self.welcome()
+        self.game_info()
+        return self.number_of_players()
 
     def run_game(self):
-        self.welcome()
-        user_input = input(f'''
-        
-                    Hit "Enter" on the keyboard to start!
-                    
-                    ''')
-
-        print(user_input)
-
-        self.game_info()
-        self.number_of_players()
         self.name_to_number()
-        self
+        
 
 
     def welcome(self):
@@ -30,6 +26,13 @@ class Game:
                 Welcome to Rock, Paper, Scissors, Lizard, Spock.''' '\n'
                 
                 )
+        user_input = input(f'''
+        
+                    Hit "Enter" on the keyboard to start!
+                    
+                    ''')
+
+        print(user_input)
 
     def game_info(self):
         
@@ -41,43 +44,47 @@ class Game:
 
 
     def number_of_players(self):
-        con_bool = input(f'How many players? 1 or 2' '\n')
+        con_bool = True
         while con_bool:
-            if con_bool == '1':
+            user_input = input(f'How many players? 1 or 2' '\n')
+            if user_input == '1':
                 print('Great! You chose one player mode.''\n')
-                break
-            elif con_bool == '2':
+                con_bool = False
+                return AI('Computer Player')
+            elif user_input == '2':
                 print('Great! You chose multiplayer mode.''\n')
-                break
+                con_bool = False
+                return Human('Player Two')
             else:
                 print('Invalid selection, please choose option "1" or "2".''\n')
-                return self.number_of_players()
-                
-    def name_to_number(name):
-        bool2 = input(f'Choose 0 for Rock''\n''Choose 1 for Spock''\n''Choose 2 for Paper''\n''Choose 3 for Lizard''\n''Choose 4 for Scissors''\n''\n' 'Choose your gesture from the above list.''\n')
-        while bool2:
 
-            if(bool2 == '0'):
+                
+    def name_to_number(self):
+        
+        con_bool2 = True
+        while con_bool2:
+            user_input = input(f'Choose 0 for Rock''\n''Choose 1 for Spock''\n''Choose 2 for Paper''\n''Choose 3 for Lizard''\n''Choose 4 for Scissors''\n''\n' 'Choose your gesture from the above list.''\n')
+            if(user_input == '0'):
                 print(' Chose Rock.')
                 break
-            elif(bool2 == '1'):
+            elif(user_input == '1'):
                 print('Player One Chose Spock.')
                 break
-            elif(bool2 == '2'):
+            elif(user_input == '2'):
                 print('Player One Chose Paper')
                 break
-            elif(bool2 == '3'):
+            elif(user_input == '3'):
                 print('Player One Chose Lizard')
                 break
-            elif(bool2 == '4'):
+            elif(user_input == '4'):
                 print('Player One Chose Scissors')
                 break
             else:
                 print("Invalid input. Please try again.")
-                return name.name_to_number()
+            
 
-    def rpsls(self, player_choice):
-        
+    def current_turn(self):
+        # Do a while loop but you do not need if/else statements. Logic in the turns
         
         print("\n")
         

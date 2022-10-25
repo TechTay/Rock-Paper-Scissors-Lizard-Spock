@@ -4,12 +4,12 @@ import random
 from time import sleep
 
 class AI (Player):
+# has a
     def __init__(self,name):
-        super().__init__()
-        self.name = name
+        super().__init__(name)
         self.score = 0
-
-    def choose_gesture(self):
+#  does a
+    def player_gesture_choice(self):
         self.chosen_gesture = str(random.randint(0,4))
         rpsls_list = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard']
         sleep(1)
