@@ -19,7 +19,9 @@ class Game:
         print(user_input)
 
         self.game_info()
-        
+        self.number_of_players()
+        self.name_to_number()
+        self.
 
 
     def welcome(self):
@@ -52,7 +54,7 @@ class Game:
                 return self.number_of_players()
                 
     def name_to_number(name):
-        bool2 = input(f'Choose 0 for Rock''\n''Choose 1 for Spock''\n''Choose 2 for Paper''\n''Choose 3 for Lizard''\n''Choose 4 for Scissors''\n' )
+        bool2 = input(f'Choose 0 for Rock''\n''Choose 1 for Spock''\n''Choose 2 for Paper''\n''Choose 3 for Lizard''\n''Choose 4 for Scissors''\n''\n' 'Choose your gesture from the above list.''\n')
         while bool2:
 
             if(bool2 == '0'):
