@@ -1,4 +1,5 @@
-from unicodedata import name
+import random
+from time import sleep
 from player import Player
 from human import Human
 from ai import AI
@@ -16,8 +17,8 @@ class Game:
         return self.number_of_players()
 
     def run_game(self):
-        self.name_to_number()
-        
+        self.match_startup()
+               
 
 
     def welcome(self):
@@ -59,33 +60,85 @@ class Game:
                 print('Invalid selection, please choose option "1" or "2".''\n')
 
                 
-    def name_to_number(self):
+    def match_startup(self):
         
-        con_bool2 = True
-        while con_bool2:
-            user_input = input(f'Choose 0 for Rock''\n''Choose 1 for Spock''\n''Choose 2 for Paper''\n''Choose 3 for Lizard''\n''Choose 4 for Scissors''\n''\n' 'Choose your gesture from the above list.''\n')
-            if(user_input == '0'):
-                print(' Chose Rock.')
-                break
-            elif(user_input == '1'):
-                print('Player One Chose Spock.')
-                break
-            elif(user_input == '2'):
-                print('Player One Chose Paper')
-                break
-            elif(user_input == '3'):
-                print('Player One Chose Lizard')
-                break
-            elif(user_input == '4'):
-                print('Player One Chose Scissors')
-                break
-            else:
-                print("Invalid input. Please try again.")
-            
+        user_action = True
+        while True:
+            user_action = input("Enter a choice (Rock, Paper, Scissors, Lizard, Spock): ")
+            possible_actions = ["Rock", "Paper", "Scissors","Lizard","Spock"]
+            computer_action = random.choice(possible_actions)
+            print(f"\n You chose {user_action}'\n' computer chose {computer_action}.'\n' ")
 
-    def current_turn(self):
-        # Do a while loop but you do not need if/else statements. Logic in the turns
-        
-        print("\n")
-        
-        pass
+            if user_action == computer_action:
+                print(f"Both players selected {user_action}. It's a tie!")
+            
+            elif user_action == "rock":
+                if computer_action == "scissors":
+                    print("You win!"'\n')
+                else:
+                    print("You lose."'\n')
+
+            elif user_action == "paper":
+                if computer_action == "rock":
+                    print("You win!"'\n')
+                else:
+                    print("You lose."'\n')
+
+            elif user_action == "scissors":
+                if computer_action == "paper":
+                    print("You win!"'\n')
+                else:
+                    print("You lose."'\n')
+
+            elif user_action == 'Spock':
+                if computer_action == 'Rock':
+                    print('You win!''\n')
+                else:
+                    print('You lose!''\n')
+
+            elif user_action == "Lizard":
+                if computer_action == "Paper":
+                    print("You win!"'\n')
+                else:
+                    print('You Lose!''\n')
+
+            elif user_action == "Rock":
+                if computer_action == "Lizard":
+                    print("You win!"'\n')
+                else:
+                    print('You Lose!''\n')
+
+            elif user_action == "Lizard":
+                if computer_action == "Spock":
+                    print("You win!"'\n')
+                else:
+                    print('You Lose!''\n')
+
+            elif user_action == "Spock":
+                if computer_action == "Scissors":
+                    print("You win!"'\n')
+                else:
+                    print('You Lose!''\n')
+
+            elif user_action == "Scissors":
+                if computer_action == "Lizard":
+                    print("You win!"'\n')
+                else:
+                    print('You Lose!''\n')
+
+            elif user_action == "Paper":
+                if computer_action == "Spock":
+                    print("Lizard eats paper! You win!"'\n')
+                else:
+                    print('Rock crushes Lizard. You Lose!''\n')
+            
+                if user_action == '2':
+                    print(f'{self.player_one} won best out of 3 games!')
+            elif computer_action == '2':
+                    print(f'{self.Player_two} won best of 3 games!')
+                    
+                    play_again = input("Play again? (y/n): "'\n')
+                    if play_again.lower() != "y":
+                        break
+
+    
