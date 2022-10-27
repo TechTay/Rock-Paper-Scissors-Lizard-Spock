@@ -56,10 +56,11 @@ class Game:
             elif user_input == '2':
                 print('Great! You chose multiplayer mode.''\n')
                 con_bool = False
-                Human('Player Two')
-                
+                return Human('Player Two')
+
             else:
-                print('Invalid selection, please choose option "1" or "2".''\n')
+                print('Invalid input. Please select "1" or "2" to continue.')    
+
 
                 
     def match_startup(self):
@@ -68,10 +69,13 @@ class Game:
             user_action = input("Enter a choice (Rock, Paper, Scissors, Lizard, Spock): ")
             possible_actions = ["Rock", "Paper", "Scissors","Lizard","Spock"]
             computer_action = random.choice(possible_actions)
-            print(f"\n You chose {user_action}'\n' computer chose {computer_action}.'\n' ")
+            print(f"\n {self.player_one.name} chose {user_action}'\n' {self.Player_two.name} chose {computer_action}.'\n' ")
 
             if user_action == computer_action:
                 print(f"Both players selected {user_action}. It's a tie!")
+
+            elif user_action == random.choice or computer_action == random.choice:
+                print('Invalid input. Please try again''\n')
             
             elif user_action == "Rock" or user_action == "rock":
                 if computer_action == "Scissors" or computer_action == "Lizard":
@@ -118,16 +122,16 @@ class Game:
             elif self.Player_two.score == 2:
                 return self.display_winner()
 
-            else:
-                print('Invalid input. Please try again.')
+            
+
 
     def display_winner(self):
         while self.player_one.score or self.Player_two.score:
             if self.player_one.score == 2:
-                print(f'Player One wins!''\n')
+                print(f'{self.player_one.name} wins!''\n')
 
             else:
-                print(f'{self.Player_two} wins!')
+                print(f'{self.Player_two.name} wins!')
 
             play_again = input(" That was fun! Play again? (y/n): "'\n')
             if play_again.lower() != "y":
