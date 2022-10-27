@@ -8,9 +8,8 @@ from ai import AI
 
 class Game:
     def __init__(self):
-        self.create_game()
         self.player_one = Human('Player One')
-        self.Player_two = AI(name)
+        self.Player_two = self.create_game()
         
 
     def create_game(self):
@@ -56,8 +55,8 @@ class Game:
                 return AI('Computer Player')
             elif user_input == '2':
                 print('Great! You chose multiplayer mode.''\n')
+                AI('Player Two')
                 con_bool = False
-                return Human('Player Two')
             else:
                 print('Invalid selection, please choose option "1" or "2".''\n')
 
@@ -73,103 +72,65 @@ class Game:
             if user_action == computer_action:
                 print(f"Both players selected {user_action}. It's a tie!")
             
-            elif user_action == "Rock":
-                self.player_one.score += 1
-                if computer_action == "Scissors":
+            elif user_action == "Rock" or user_action == "rock":
+                if computer_action == "Scissors" or computer_action == "Lizard":
                     print("You win!"'\n')
-                else:
-                    self.Player_two.score += 1
-                    print("You lose."'\n')
-                
-            elif user_action == "paper":
-                self.player_one.score += 1
-                if computer_action == "rock":
-                    self.Player_two.score += 1
-                    print("You win!"'\n')
+                    self.player_one.score += 1
                 else:
                     print("You lose."'\n')
-                
-            elif user_action == "scissors":
-                self.player_one.score += 1
-                if computer_action == "paper":
                     self.Player_two.score += 1
+
+            elif user_action == "paper" or user_action == "Paper":
+                if computer_action == "rock" or computer_action == "Spock":
                     print("You win!"'\n')
+                    self.player_one.score += 1
                 else:
                     print("You lose."'\n')
+                    self.Player_two.score += 1
+
+            elif user_action == "scissors" or user_action == "Scissors":
+                if computer_action == "paper" or computer_action == "Lizard":
+                    print("You win!"'\n')
+                    self.player_one.score += 1
+                else:
+                    print("You lose."'\n')
+                    self.Player_two.score += 1
                 
-            elif user_action == 'Spock':
-                self.player_one.score += 1
-                if computer_action == 'Rock':
-                    self.Player_two.score += 1   
+            elif user_action == 'Spock' or user_action == "spock":
+                if computer_action == 'Rock' or computer_action == "Scissors":  
                     print('You win!''\n')
+                    self.player_one.score += 1
                 else:
                     print('You lose!''\n')
+                    self.Player_two.score += 1 
 
-            elif user_action == "Lizard":
-                self.player_one.score += 1
-                if computer_action == "Paper":
-                    self.Player_two.score += 1
+            elif user_action == "Lizard" or user_action == "lizard":
+                if computer_action == "Paper" or computer_action == "Spock":
                     print("You win!"'\n')
+                    self.player_one.score += 1
                 else:
                     print('You Lose!''\n')
-
-            elif user_action == "Rock":
-                self.player_one.score += 1
-                if computer_action == "Lizard":
                     self.Player_two.score += 1
-                    print("You win!"'\n')
-                else:
-                    print('You Lose!''\n')
-
-            elif user_action == "Lizard":
-                self.player_one.score += 1
-                if computer_action == "Spock":
-                    self.Player_two.score += 1
-                    print("You win!"'\n')
-                else:
-                    print('You Lose!''\n')
-
-            elif user_action == "Spock":
-                self.player_one.score += 1
-                if computer_action == "Scissors":
-                    self.Player_two.score += 1
-                    print("You win!"'\n')
-                else:
-                    print('You Lose!''\n')
-
-            elif user_action == "Scissors":
-                self.player_one.score += 1
-                if computer_action == "Lizard":
-                    self.Player_two.score += 1
-                    print("You win!"'\n')
-                else:
-                    print('You Lose!''\n')
-
-            elif user_action == "Paper":
-                self.player_one.score += 1
-                if computer_action == "Spock":
-                    self.Player_two.score += 1
-                    print("You win!"'\n')
-                else:
-                    print('You Lose!''\n')
                     
             if self.player_one.score == 2:
                 return self.display_winner()
             elif self.Player_two.score == 2:
                 return self.display_winner()
 
-            # play_again = input("Play again? (y/n): "'\n')
-            # if play_again.lower() != "y":
-            #     break
+            else:
+                print('Invalid input. Please try again.')
 
     def display_winner(self):
         while self.player_one.score or self.Player_two.score:
             if self.player_one.score == 2:
-                print(f'Player One wins!')
+                print(f'Player One wins!''\n')
 
             else:
                 print(f'{self.Player_two} wins!')
 
-            play_again = input("Play again? (y/n): "'\n')
+            play_again = input(" That was fun! Play again? (y/n): "'\n')
             if play_again.lower() != "y":
                 break
+            else:
+                self.player_one.score == 0 and self.Player_two.score == 0
+                return Game()
