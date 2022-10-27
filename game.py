@@ -55,8 +55,9 @@ class Game:
                 return AI('Computer Player')
             elif user_input == '2':
                 print('Great! You chose multiplayer mode.''\n')
-                AI('Player Two')
                 con_bool = False
+                Human('Player Two')
+                
             else:
                 print('Invalid selection, please choose option "1" or "2".''\n')
 
